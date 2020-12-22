@@ -1,0 +1,317 @@
+<tr>
+              <td>Printer05</td>
+              <td>JetPrinx</td>
+              <td>Oficinas</td>
+              <td>192.152.0.1</td>
+              <td>Oficina-2</td>
+              <td>7</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer51</td>
+              <td>HP</td>
+              <td>Oficinas</td>
+              <td>194.168.0.6</td>
+              <td>Oficina-2</td>
+              <td>6</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer10</td>
+              <td>HP-595</td>
+              <td>Secretaría</td>
+              <td>192.168.0.1</td>
+              <td>Planta-01</td>
+              <td>15</td>
+              <td><span class="badge badge-pill badge-secondary" id="badge">Pausada</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer90</td>
+              <td>Impresora de Chema</td>
+              <td>Oficinas</td>
+              <td>192.168.0.4</td>
+              <td>Oficina-2</td>
+              <td>0</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer05</td>
+              <td>JetPrinx</td>
+              <td>Oficinas</td>
+              <td>192.152.0.1</td>
+              <td>Oficina-2</td>
+              <td>7</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer08</td>
+              <td>HP-700</td>
+              <td>Oficinas</td>
+              <td>194.168.0.6</td>
+              <td>Oficina-2</td>
+              <td>6</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer12</td>
+              <td>La impresora de José</td>
+              <td>Secretaría</td>
+              <td>192.168.0.1</td>
+              <td>Planta-01</td>
+              <td>15</td>
+              <td><span class="badge badge-pill badge-secondary" id="badge">Pausada</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer13</td>
+              <td>Chema</td>
+              <td>Oficinas</td>
+              <td>192.168.0.4</td>
+              <td>Oficina-2</td>
+              <td>0</td>
+              <td><span class="badge badge-pill badge-danger" id="badge">Sin tinta</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer14</td>
+              <td>JetPrinx</td>
+              <td>Oficinas</td>
+              <td>192.152.0.1</td>
+              <td>Oficina-2</td>
+              <td>7</td>
+              <td><span class="badge badge-pill badge-danger" id="badge">Sin papel</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer03</td>
+              <td>HP-3600</td>
+              <td>Oficinas</td>
+              <td>194.168.0.6</td>
+              <td>Oficina-2</td>
+              <td>6</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer17</td>
+              <td>HP-607</td>
+              <td>Secretaría</td>
+              <td>192.168.0.1</td>
+              <td>Planta-01</td>
+              <td>15</td>
+              <td><span class="badge badge-pill badge-secondary" id="badge">Pausada</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer19</td>
+              <td>Chema</td>
+              <td>Oficinas</td>
+              <td>192.168.0.4</td>
+              <td>Oficina-2</td>
+              <td>0</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer20</td>
+              <td>JetPrinx</td>
+              <td>Oficinas</td>
+              <td>192.152.0.1</td>
+              <td>Oficina-2</td>
+              <td>7</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer21</td>
+              <td>Canon PIXMA</td>
+              <td>Oficinas</td>
+              <td>194.168.0.6</td>
+              <td>Oficina-2</td>
+              <td>6</td>
+              <td><span class="badge badge-pill badge-success" id="badge">Imprimiendo</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer22</td>
+              <td>HP-234</td>
+              <td>Secretaría</td>
+              <td>192.168.0.1</td>
+              <td>Planta-01</td>
+              <td>15</td>
+              <td><span class="badge badge-pill badge-secondary" id="badge">Pausada</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+            <tr>
+              <td>Printer23</td>
+              <td>HP-607</td>
+              <td>Oficinas</td>
+              <td>192.168.0.4</td>
+              <td>Oficina-2</td>
+              <td>0</td>
+              <td><span class="badge badge-pill badge-danger" id="badge">Sin tinta</span></td>
+              <td>
+                <button type="button" data-toggle="modal" data-target="#modalJobs"><img class="icon"
+                    src="img/jobs.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalSend"><img class="icon"
+                    src="img/send.png"></img></button>
+                <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                    src="img/delete.png"></img></button>
+              </td>
+            </tr>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+     <tr>
+                    <td>IU.pdf</td>
+                    <td>Manuel</td>
+                    <td>
+                      <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                          src="img/delete.png"></img></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Holaquetal.pdf</td>
+                    <td>Marina</td>
+                    <td>
+                      <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                          src="img/delete.png"></img></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>AW.pdf</td>
+                    <td>Esther</td>
+                    <td>
+                      <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                          src="img/delete.png"></img></button>
+                    </td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Perritos.pdf</td>
+                    <td>Alfon</td>
+                    <td>
+                      <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                          src="img/delete.png"></img></button>
+                    </td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nose.pdf</td>
+                    <td>Jorge</td>
+                    <td>
+                      <button type="button" data-toggle="modal" data-target="#modalDelete"><img class="icon"
+                          src="img/delete.png"></img></button>
+                    </td>
+                    </td>
+                  </tr>

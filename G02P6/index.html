@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  usar filter para hacer busquedas
+  usar json para poner los datos de las cosas
+-->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Esto aparece como título de la ventana o pestaña en el navegador: cámbialo -->
+    <title>Printer manager - Grupo02</title>
+</head>
+
+<body>
+
+    <!-- BUSCADOR -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav">
+        <input class="form-control" id="searchInput" type="search" placeholder="Buscar" aria-label="Search">
+        <!-- FILTRAR -->
+        <!-- quitamos esto por falta de tiempo
+        <div class="dropdown">
+            <div class="input-group-btn search-panel">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span id="search_concept"></span> <span class="caret"></span>
+                    <img id="iconF" class="icon" src="img/filter.png"></img>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#all">Todos</a></li>
+                    <li><a class="dropdown-item" href="#alias">Alias</a></li>
+                    <li><a class="dropdown-item" href="#modelo">Modelo</a></li>
+                    <li><a class="dropdown-item" href="#loc">Localización</a></li>
+                    <li><a class="dropdown-item" href="#ip">IP</a></li>
+                    <li><a class="dropdown-item" href="#groupo">Grupo</a></li>
+                </ul>
+            </div>
+            <input type="hidden" name="search_param" value="all" id="search_param">
+        </div>
+        -->
+    </nav>
+
+    <!--PESTAÑA DE ELECCION ENTRE IMPRESORA O GRUPOS-->
+    <div class="container" id="tabla1">
+
+        <!-- IMPRESORAS Y GRUPOS -->
+        <div class="col-xs">
+            <div class="card">
+                <!--ESTAS SON LAS PESTAÑITAS-->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Añadir Impresoras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">Añadir Grupos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="show-tab" data-toggle="tab" href="#show" role="tab" aria-controls="show"
+                            aria-selected="false">Ver Grupos</a>
+                    </li>
+                </ul>
+
+                <!--AQUÍ VA EL CONTENIDO QUE INDICAN LAS PESTAÑAS DE ARRIBA-->
+
+                <div class="tab-content" id="myTabContent">
+
+                    <!--TAB AÑADIR IMPRESORA-->
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <form id="info-impres" class="form">
+                            <div class="form-group">
+                                <label for="inputalias">Alias</label>
+                                <input name="alias" required="" class="form-control" id="inputalias"
+                                    aria-describedby="alias">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputmodelo">Modelo</label>
+                                <input name="modelo" required="" class="form-control" id="inputmodelo"
+                                    aria-describedby="modelo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputloc">Localización</label>
+                                <input name="localizacion" required="" class="form-control" id="inputloc"
+                                    aria-describedby="localizacion">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputip">IP</label>
+                                <input type="text" name="ip" class="form-control ip-input" required="" id="inputip"
+                                    aria-describedby="ip">
+
+                            </div>
+
+                            <!-- MULTISELECT
+                            <div id="dropdownBuscableGrupos">
+                                <label for="inputgrupos">Grupos</label>
+                                <input class="form-control" type="search" placeholder="Buscar">
+                                <select id="gruposPrinters" class="multiple from-control" multiple="multiple" multiple
+                                    size="4">
+                                    SCRIPT
+                                </select>
+                            </div> -->
+
+                            <div class="tipoBoton">
+                                <button class="btn-primary" type="submit" id="addprinter">Añadir
+                                    impresora</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!--TAB AÑADIR GRUPO-->
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                        <form id="info-groups" class="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nombre*</label>
+                                <input type="alias" required="" class="form-control" id="nameGroup"
+                                    aria-describedby="alias">
+                            </div>
+                            <div class="form-group">
+
+                                <!-- MULTISELECT -->
+                                <div id="dropdownBuscableImpresoras">
+                                    <label for="inputPrinters">Impresoras</label>
+                                    <input class="form-control" type="search" placeholder="Buscar">
+                                    <select class="multiple from-control" id="printersGroupAdd" multiple size="4">
+                                        <!-- SCRIPT -->
+                                    </select>
+                                </div>
+
+                                <div class="tipoBoton">
+                                    <button class="btn-primary" type="submit" id="addgroups">Añadir Grupo</img></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!--TAB VER GRUPOS-->
+                    <div class="tab-pane fade" id="show" role="tabpanel" aria-labelledby="show-tab">
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                            <table class="table table-bordered mb-0" id="grupoTabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Impresoras</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTableGroup">
+                                    <!--SCRIPT PARA INSERTAR GRUPOS-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLA -->
+        <div class="container" id="tabla">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar" id="principalTabla">
+                <table class="table table-bordered mb-0">
+                    <thead>
+                        <tr>
+                            <th>Alias</th>
+                            <th>Modelo</th>
+                            <th>Localización</th>
+                            <th>IP</th>
+                            <th>Estado</th>
+                            <th>Grupos</th>
+                            <th>Trabajos</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTableImp">
+                        <!--DATOS IMPRESORAS POR SCRIPT-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de cola de trabajo -->
+    <div class="modal fade" id="modalJobs" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document" id="dialogTrabajo">
+            <div class="modal-content" id="colaTrabajo">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-xs">
+                        <div class="container" id="cola">
+                            <table class="table table-bordered table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Propietario</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTableJobs">
+                                    <!--script para trabajo de impresión-->
+                                </tbody>
+                            </table>
+
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de ver grupos de una impresora -->
+    <div class="modal fade" id="modalGroups" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-xs">
+                        <div class="container" id="cola">
+                            <table class="table table-bordered table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaGruposPrinter">
+                                    <!--script para ver grupo-->
+                                </tbody>
+                            </table>
+
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPrinters" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-xs">
+                        <div class="container" id="cola">
+                            <table class="table table-bordered table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Alias</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaPrinterGrupos">
+                                    <!--script para ver grupo-->
+                                </tbody>
+                            </table>
+
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de enviar trabajo -->
+    <div class="modal fade" id="modalSend" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="info-sendJob">
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">Nombre de Fichero</label>
+                            <input type="file" required="" class="form-control doc-validator" id="exampleInputFile">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputOwner">Propietario*</label>
+                            <input type="modelo" required="" class="form-control" id="exampleInputOwner"
+                                aria-describedby="modelo">
+                        </div>
+
+                        <label for="exampleInputEmail1">Enviar a:</label>
+
+                        <div class="form-check margenes">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="radioPrinter"
+                                value="Impresora" checked>
+                            <label class="form-check-label" for="exampleRadios">Impresora</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="radioGroup"
+                                value="Grupo">
+                            <label class="form-check-label" for="exampleRadios">Grupo
+
+                                <!-- MULTISELECT -->
+                                <div id="dropdownBuscableTrabajoGrupo">
+                                    <input class="form-control" type="search" placeholder="Buscar">
+                                    <select id="enviarTrabajoGrupo" disabled class="multiple from-control" multiple required multiple size="4">
+                                        <!-- SCRIPT -->
+                                    </select>
+                                </div>
+
+                            </label>
+                        </div>
+
+                        
+
+                        <div class="botones">
+                            <button type="submit" class="btn btn-primary mb-2" id="btnsendJob">Aceptar</button>
+                        </div>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal de eliminar impresora-->
+    <div class="modal fade" id="modalDeletePrinter" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deletePrinterForm">
+                        <td>
+                            <!--Poner en la misma línea-->
+                            <div class="botones">
+                                <button type="submit" id="deletePrinter"
+                                    class="btn btn-danger mb-2 est">Eliminar</button>
+                                <button type="submit" class="btn btn-primary mb-2 est">Cancelar</button>
+                            </div>
+                        </td>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de eliminar impresora de grupò-->
+    <div class="modal fade" id="modalDeletePrinterfromGroup" tabindex="-1" role="dialog"
+        aria-labelledby="tituloModalCategorias" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deletePrinterFormGroup">
+                        <td>
+                            <!--Poner en la misma línea-->
+                            <div class="botones">
+                                <button type="submit" id="deletePrinterFromGroup"
+                                    class="btn btn-danger mb-2 est">Eliminar</button>
+                                <button type="submit" class="btn btn-primary mb-2 est">Cancelar</button>
+                            </div>
+                        </td>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de eliminar grupo de impresora-->
+    <div class="modal fade" id="modalDeleteGroupfromPrinter" tabindex="-1" role="dialog"
+        aria-labelledby="tituloModalCategorias" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deleteGroupFormPrinter">
+                        <td>
+                            <!--Poner en la misma línea-->
+                            <div class="botones">
+                                <button type="submit" id="deleteGroupFromPrinter"
+                                    class="btn btn-danger mb-2 est">Eliminar</button>
+                                <button type="submit" class="btn btn-primary mb-2 est">Cancelar</button>
+                            </div>
+                        </td>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de eliminar grupo-->
+    <div class="modal fade" id="modalDeleteGroup" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deleteGroupForm">
+                        <!--Poner en la misma línea-->
+                        <div class="botones">
+                            <button type="submit" id="deleteGroup" class="btn btn-danger mb-2 est">Eliminar</button>
+                            <button type="submit" class="btn btn-primary mb-2 est">Cancelar</button>
+                        </div>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de eliminar trabajo-->
+    <div class="modal fade" id="modalDeleteJob" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deleteJobForm">
+                        <td>
+                            <!--Poner en la misma línea-->
+                            <div class="botones">
+                                <button type="submit" id="btnDeleteJob"
+                                    class="btn btn-danger mb-2 est">Eliminar</button>
+                                <button type="submit" class="btn btn-primary mb-2 est">Cancelar</button>
+                            </div>
+                        </td>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de editar grupo -->
+    <div class="modal fade" id="modalEditGroup" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias">Editar Grupo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="edit-group">
+                        <div class="form-group">
+                            <label for="inputname">Nombre</label>
+                            <input type="alias" class="form-control" id="aliasGroup" aria-describedby="alias">
+                        </div>
+
+                        <!-- MULTISELECT -->
+                        <div id="dropdownBuscableImpresorasGroup">
+                            <label for="inputprinters">Impresoras</label>
+                            <input class="form-control" type="search" placeholder="Buscar">
+                            <select class="multiple from-control" id="printersGroupEdit" multiple size="4">
+                                <!-- SCRIPT -->
+                            </select>
+                        </div>
+
+                        <div class="botones">
+                            <button type="submit" id="editGroup" class="btn btn-primary mb-2">Aceptar</button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de editar impresora -->
+    <div class="modal fade" id="modalEditPrinter" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModalCategorias">Editar Impresora</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-impres">
+
+                        <div class="form-group">
+                            <label for="inputAlias">Alias</label>
+                            <input type="alias" class="form-control" id="inputAlias" aria-describedby="alias">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputModelo">Modelo</label>
+                            <input type="modelo" class="form-control" id="inputModelo" aria-describedby="modelo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputLoc">Localización</label>
+                            <input type="localizacion" class="form-control" id="inputLoc"
+                                aria-describedby="localizacion">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputIp">IP</label>
+                            <input type="ip" class="form-control ip-input" id="inputIp" aria-describedby="ip" required>
+                        </div>
+
+                        <!-- MULTISELECT -->
+                        <div id="dropdownBuscableGruposEdit">
+                            <label for="inputGrupos">Grupos</label>
+                            <input class="form-control" type="search" placeholder="Buscar">
+                            <select class="multiple from-control" id="groupPrintersEdit" multiple size="4">
+                                <!-- SCRIPT -->
+                            </select>
+                        </div>
+
+                        <div class="botones">
+                            <button type="submit" id="editPrinter" class="btn btn-primary mb-2">Aceptar</button>
+                        </div>
+                        <div class="modal-footer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- jQuery primero, Bootstrap después -->
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- todos los scripts de interaccion, aqui -->
+    <script src="js/pmgr.js" type="module"></script>
+    
+</body>
+
+</html>
